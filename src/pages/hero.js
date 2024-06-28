@@ -4,10 +4,18 @@ import { useState, useEffect } from 'react';
 const Home = () => {
   const [bgIndex, setBgIndex] = useState(0);
   const backgrounds = [
+<<<<<<< HEAD
     '/img1.jpg',
     '/img2.jpg',
     '/img3.jpg',
     ///'/bg3.jpg',
+=======
+    '/image1.jpg',
+    '/image2.jpg',
+    '/bg2.jpg',
+    '/bg1.jpg',
+
+>>>>>>> bb6df9f93a1e6255d41b56d08a5ee57494337e78
     // Add more images as needed
   ];
 
@@ -25,8 +33,13 @@ const Home = () => {
           backgroundImage: `url(${backgrounds[bgIndex]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+<<<<<<< HEAD
           height: '100vh',
           width: '120%',
+=======
+          height: '50vh',
+          width: '150%',
+>>>>>>> bb6df9f93a1e6255d41b56d08a5ee57494337e78
           position: '-webkit-sticky',
           top: 100,
           left: 10,
