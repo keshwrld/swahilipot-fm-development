@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 const Home = () => {
   const [bgIndex, setBgIndex] = useState(0);
   const backgrounds = [
-    '/image1.jpg',
-    '/image2.jpg',
+    '/img1.jpg',
+    '/img2.jpg',
+    '/img3.jpg',
     ///'/bg3.jpg',
     // Add more images as needed
   ];
@@ -25,7 +26,7 @@ const Home = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '100vh',
-          width: '170%',
+          width: '120%',
           position: '-webkit-sticky',
           top: 100,
           left: 10,
@@ -348,6 +349,9 @@ const Home = () => {
         {/* Info */}
         {/* End Info */}
       </div>
+      <div class='fm-frequencies'>
+  <div class='fm-frequency'><p><span> Tune in </span>9.7 FM Mombasa || 97.1 Malindi || 91.7 Kilifi </p></div>
+</div>
       
       {/* End Team */}
 
@@ -359,7 +363,7 @@ const Home = () => {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 37vh;
+          height: 50vh;
           object-fit: cover;
           filter: blur(0px); 
           z-index: -1; 
@@ -388,6 +392,23 @@ const Home = () => {
           justify-content: flex-end; /* Align content to the bottom */
           padding: 1rem; /* Adjust padding as needed */
         }
+          .fm-frequency {
+  background-color: #9c9696;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 5s ease-in-out infinite alternate;
+  position: absolute;
+  left: 40%;
+  top: 80%;
+
+}
+.fm-frequency p span {
+  font-weight: bold;
+  color: #333333;
+}
         `}
         
   </style>
