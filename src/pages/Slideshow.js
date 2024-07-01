@@ -1,46 +1,47 @@
-import { useState, useEffect } from 'react';
+// components/Slideshow.js
+import styles from '../styles/Slideshow.module.css';
 
-const Slideshow = ({ images }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const cardsData = [
+  { id: 1, category: 'Politics', title: 'State of product analytics report', image: '/ruto.jpg' },
+  { id: 2, category: 'Education', title: 'New Curriculum Revolutionizes Learning', image: '/MACHOGU.jpg' },
+  { id: 3, category: 'Music', title: 'The Evolution of Music', image: '/Music.jpg' },
+  { id: 4, category: 'Sports', title: 'Team Clinches Championship Title', image: '/Mainoo.jpg' },
+  { id: 5, category: 'Youth', title: 'Young Innovators Lead the Way in Tech', image: '/African-Youth.jpg' },
+  { id: 6, category: 'Environment', title: 'Sustainable Materials: A Guide to Eco-Friendly Choices', image: '/ENV.jpg' },
+  // Duplicate the data to make the loop seamless
+  { id: 7, category: 'Politics', title: 'State of product analytics report', image: '/ruto.jpg' },
+  { id: 8, category: 'Education', title: 'New Curriculum Revolutionizes Learning', image: '/MACHOGU.jpg' },
+  { id: 9, category: 'Music', title: 'The Evolution of Music', image: '/Music.jpg' },
+  { id: 10, category: 'Sports', title: 'Team Clinches Championship Title', image: '/Mainoo.jpg' },
+  { id: 11, category: 'Youth', title: 'Young Innovators Lead the Way in Tech', image: '/African-Youth.jpg' },
+  { id: 12, category: 'Environment', title: 'Sustainable Materials: A Guide to Eco-Friendly Choices', image: '/ENV.jpg' },
+];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
+const Slideshow = () => {
   return (
-    <div className="slideshow">
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image.src}
-          alt={image.alt}
-          className={index === currentImageIndex ? 'active' : ''}
-        />
-      ))}
-      <style jsx>{`
-        .slideshow {
-          position: relative;
-          max-width: 100%;
-          overflow: hidden;
-          height: 400px; /* Adjust height as needed */
-        }
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          transition: opacity 0.5s ease-in-out;
-        }
-        img.active {
-          opacity: 1;
-        }
-      `}</style>
+    <div className={styles.slideshow}>
+      <div className={styles.slideTrack}>
+        {cardsData.map(card => (
+          <div className={styles.slide} key={card.id}>
+            <div className="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <a className="card card-lg card-transition bg-primary-dark" href="../blog-article.html" style={{ minHeight: "22rem" }}>
+                <div className="card-body">
+                  <div className="mb-3">
+                    <h3><span className="badge bg-soft-light">{card.category}</span></h3>
+                  </div>
+                  <h4 className="card-title text-white mb-5">{card.title}</h4>
+                  <span className="card-link link-light">
+                    Learn more <i className="bi-chevron-right small ms-1" />
+                  </span>
+                  <div className="position-absolute bottom-0 start-0 end-0">
+                    <img className="card-img" src={card.image} alt="Card Image" />
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

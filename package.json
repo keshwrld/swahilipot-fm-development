@@ -15,7 +15,8 @@
     "ldrs": "^1.0.2",
     "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -14,6 +14,7 @@ const Home = () => {
         <div className='content-wrapper'>
           <div className='content-column'>
             <Hero />
+          
           </div>
         </div>
         {/* End Content */}
