@@ -3,6 +3,8 @@ import Footer from '@/pages/footer';
 import Hero from '@/pages/hero';
 import Header from '@/pages/header'
 import ContactSection from './Contactsection';  
+import SwiperSlider from '@/components/SwiperSlider';
+
 
 
 const Home = () => {
@@ -14,6 +16,7 @@ const Home = () => {
         <div className='content-wrapper'>
           <div className='content-column'>
             <Hero />
+            <SwiperSlider />
           
           </div>
         </div>
@@ -28,6 +31,7 @@ const Home = () => {
           min-height: 100%;
           display: flex;
           flex-direction: column;
+          
         }
         #__next {
           flex: 1;
@@ -44,6 +48,7 @@ const Home = () => {
           align-items: center;
           padding: 1rem;
           box-sizing: border-box;
+          background-color: ;
         }
         .content-wrapper {
           width: 100%;

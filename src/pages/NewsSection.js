@@ -4,9 +4,10 @@ const NewsPages = () => {
     <>
 
  <div className="w-lg-65 text-center mx-lg-auto mb-7">
-      <h3>Explore all News</h3>
+      <h3>What's trending</h3>
       <p className="fs-6"> </p>
  </div>
+ <div className="left-section">
 <div className="row mb-5 mb-sm-5">
 <div className="col-sm-6 col-lg-4 mb-3 mb-lg-5">
   {/* Card */}
@@ -180,6 +181,7 @@ const NewsPages = () => {
 </div>
 {/* End Col */}
 </div>
+</div>
 <div className="text-center">
       <p className="mb-0">Want to read more?</p>
       <a className="link" href="/news">
@@ -201,6 +203,14 @@ const NewsPages = () => {
           filter: blur(0px); 
           z-index: -1; 
         }
+     .left-section {
+  position: relative;
+  left: 0;
+  top: 0px; /* or set a specific top value */
+  width: 1000px; /* or set a specific width */
+  background-color: #f0f0f0;
+  padding: 1px;
+}
           .card {
           position: relative;
           overflow: hidden;

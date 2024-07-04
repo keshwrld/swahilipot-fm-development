@@ -5,6 +5,7 @@ import Teams from './Team';
 
 
 
+
 const Home = () => {
   const [bgIndex, setBgIndex] = useState(0);
   const backgrounds = [
@@ -25,43 +26,51 @@ const Home = () => {
   return (
     <>
    <div
-  style={{
-    backgroundImage: `url(${backgrounds[bgIndex]})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '85vh', 
-    width: '180vh',
-    position: 'relative',
-    borderRadius: '10px',
-    border: '10px solid green',
-    overflow: 'hidden',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    marginBottom: '20px',
-    padding: '10px',
-    '@media (max-width: 768px)': {
-      height: '50vh', 
-    },
-    '@media (max-width: 576px)': {
-      height: '40vh', 
-    },
-  }}
+ style={{
+  backgroundImage: `url(${backgrounds[bgIndex]})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'absolute',
+  height: '100vh', 
+  width: '100vw', 
+  maxWidth: '115%', 
+  maxHeight: '85vh', 
+  position: 'relative',
+  overflow: 'hidden',
+  marginBottom: '20px',
+  marginTop: '0px',
+  padding: '10px',
+  objectFit: 'cover', 
+  '@media (max-width: 1200px)': { // added a new media query for larger screens
+    height: '80vh',
+  },
+  '@media (max-width: 992px)': { // added a new media query for medium screens
+    height: '70vh',
+  },
+  '@media (max-width: 768px)': { // updated the existing media query
+    height: '60vh',
+  },
+  '@media (max-width: 576px)': { // updated the existing media query
+    height: '50vh',
+  },
+  '@media (max-width: 480px)': { // added a new media query for small screens
+    height: '40vh',
+  },
+  '@media (max-width: 320px)': { // added a new media query for very small screens
+    height: '30vh',
+  },
+}}
 />
 
 
       
       <div className="container content-space-1">
-    {/* Heading */}
-
-    {/* End Heading */}
+   
        <div className='container'>
           <NewsPages />
         </div>
-    {/* End Row */}
-    {/* Info */}
-    
-    {/* End Info */}
+  
   </div>
-      {/* Team */}
+    
       <div className='container'>
           <Teams />
         </div>
@@ -69,9 +78,9 @@ const Home = () => {
       <div class='fm-frequencies'>
   <div class='fm-frequency'><p><span> Tune in </span>9.7 FM Mombasa || 97.1 Malindi || 91.7 Kilifi </p></div>
 </div>
-        
+
       
-      {/* End Team */}
+  
 
   <style jsx>{`
   .card-img{
